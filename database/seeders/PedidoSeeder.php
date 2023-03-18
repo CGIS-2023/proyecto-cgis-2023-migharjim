@@ -4,9 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class ProveedorSeeder extends Seeder
+class PedidoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,8 +16,8 @@ class ProveedorSeeder extends Seeder
     {
         DB::table('proveedors')->insert([
             [
-                'nombre' => "Mediplus",
-                'direccion' => "Calle Agua, 32, Sevilla",
+                'id_pedido' => null,
+                'fecha' => "Calle Agua, 32, Sevilla",
                 'email' => "mediplus@gmail.com",
                 'telefono' => "654387110"
             ],
@@ -40,4 +39,5 @@ class ProveedorSeeder extends Seeder
 
             ]);
     }
+    
 }

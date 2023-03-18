@@ -25,7 +25,8 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        //
+        $proveedors = Proveedor::Proveedor::all();
+        return view('/proveedors/index', ['proveedors' => $proveedors])
     }
 
     /**
@@ -36,7 +37,17 @@ class ProveedorController extends Controller
      */
     public function store(StoreProveedorRequest $request)
     {
-        //
+        $this->validate($request,[
+        'nombre' => 'required|string|max:255',
+        'direccion' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'telefono'=> 'required|string|max:255'
+        ]);
+
+        $proveedor = new Proveedor($request->all());
+        $proveedor->save();
+        session()->flash('success', 'Proveedor creado correctamente')
+        return redirect()->route('proveedors.index');
     }
 
     /**
