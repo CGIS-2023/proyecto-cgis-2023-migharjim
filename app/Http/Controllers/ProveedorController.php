@@ -15,7 +15,8 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        //
+        $proveedors = Proveedor::paginate(25);
+        return view('/provedors/index', ['proveedors' => $proveedor]);
     }
 
     /**
@@ -25,8 +26,8 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        $proveedors = Proveedor::Proveedor::all();
-        return view('/proveedors/index', ['proveedors' => $proveedors])
+        $proveedors = Proveedor::all();
+        return view('/proveedors/create', ['proveedors' => $proveedors])
     }
 
     /**
@@ -58,7 +59,7 @@ class ProveedorController extends Controller
      */
     public function show(Proveedor $proveedor)
     {
-        //
+        return view('proveesors/show', ['proveedor' => $proveedor])
     }
 
     /**
@@ -69,7 +70,8 @@ class ProveedorController extends Controller
      */
     public function edit(Proveedor $proveedor)
     {
-        //
+        $proveedors = Proveedor::all();
+        return view('proveedors/edit', ['proveedors' => $proveedor]);
     }
 
     /**
@@ -81,7 +83,19 @@ class ProveedorController extends Controller
      */
     public function update(UpdateProveedorRequest $request, Proveedor $proveedor)
     {
-        //
+        $this->validate($request, [
+        'nombre' => 'required|string|max:255',
+        'direccion' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'telefono'=> 'required|string|max:255'
+        ]);
+        $user = $administrador->user;
+        $user->fill($request->all());
+        $user->save();
+        $medico->fill($request->all());
+        $medico->save();
+        session()->flash('success', 'Proveedor modificado correctamente.');
+        return redirect()->route('proveedors.index');
     }
 
     /**
@@ -92,6 +106,12 @@ class ProveedorController extends Controller
      */
     public function destroy(Proveedor $proveedor)
     {
-        //
+        if($proveedor->delete()) {
+            session()->flash('success', 'Proveedor borrado correctamente');
+        }
+        else{
+            session()->flash('warning', 'El Proveedor no pudo borrarse.');
+        }
+        return redirect()->route('proveedors.index');
     }
 }
