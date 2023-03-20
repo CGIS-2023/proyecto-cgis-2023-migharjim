@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('id_pedido')->nullable;
-            $table->string('fecha de emision')->nullable;
-            $table->string('fecha de recepcion')->nullable;
+            $table->date('fecha_emision')->nullable;
+            $table->date('fecha_recepcion')->nullable;
             $table->softDeletes();
         });
     }
