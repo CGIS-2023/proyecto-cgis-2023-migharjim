@@ -25,7 +25,7 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth'])->group(function () {
     Route::resources([
-        //No pongo medicos como route resource porque voy a añadirle middlewares diferentes
+        
         'proveedores' => ProveedorController::class,
     ]);
     //Todos los usuarios pueden listar y ver el detalle de un médico
