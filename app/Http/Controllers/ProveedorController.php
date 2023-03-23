@@ -91,9 +91,6 @@ class ProveedorController extends Controller
         'email' => 'required|string|email|max:255|unique:users',
         'telefono'=> 'required|string|max:255'
         ]);
-        $user = $administrador->user;
-        $user->fill($request->all());
-        $user->save();
         $proveedor->fill($request->all());
         $proveedor->save();
         session()->flash('success', 'Proveedor modificado correctamente.');

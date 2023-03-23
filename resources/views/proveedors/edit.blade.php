@@ -21,27 +21,29 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="font-semibold text-lg px-6 py-4 bg-white border-b border-gray-200">
-                    {{__('Información del Proveedor')}}
+                    {{__('Información del proveedor')}}
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                        <!-- Nombre -->
+                        <!-- Validation Errors -->
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                        <form method="POST" action="{{ route('proveedors.store') }}">
+                        <form method="POST" action="{{ route('proveedors.update', $proveedor->id) }}">
                             @csrf
+                            @method('put')
                             <div>
                                 <x-label for="nombre" :value="__('Nombre')" />
 
                                 <x-input id="nombre" class="block mt-1 w-full" type="text" name="nombre" :value="$proveedor->nombre" required autofocus />
                             </div>
 
-                            <!-- Email -->
+                          <!-- Email -->
                             <div class="mt-4">
                                 <x-label for="email" :value="__('Email')" />
 
-                                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$proveedor->email" required />
+                                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$proveedor->email" required autofocus />
                             </div>
 
-                            <!-- Dirección -->
+
+                            <!-- Direccion -->
                             <div>
                                 <x-label for="direccion" :value="__('Dirección')" />
 
@@ -55,9 +57,10 @@
                                 <x-input id="telefono" class="block mt-1 w-full" type="text" name="telefono" :value="$proveedor->telefono" required autofocus />
                             </div>
 
+
                             <div class="flex items-center justify-end mt-4">
                                 <x-button type="button" class="bg-red-800 hover:bg-red-700">
-                                    <a href="/proveedors">  <!--LE HE PUESTO LAS COMILLAS PERO NI IDEA -->
+                                    <a href="/proveedors">
                                     {{ __('Cancelar') }}
                                     </a>
                                 </x-button>
