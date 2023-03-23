@@ -30,9 +30,9 @@
                         <form method="POST" action="{{ route('proveedors.store') }}">
                             @csrf
                             <div>
-                                <x-label for="name" :value="__('Nombre')" />
+                                <x-label for="nombre" :value="__('Nombre')" />
 
-                                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                                <x-input id="nombre" class="block mt-1 w-full" type="text" name="nombre" :value="old('nombre')" required autofocus />
                             </div>
 
                             <!-- Email -->

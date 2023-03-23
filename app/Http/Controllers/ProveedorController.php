@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Requests\StoreProveedorRequest;
 use App\Http\Requests\UpdateProveedorRequest;
 use App\Models\Proveedor;
+use Illuminate\Http\Request;
 
 class ProveedorController extends Controller
 {
@@ -16,7 +18,7 @@ class ProveedorController extends Controller
     public function index()
     {
         $proveedors = Proveedor::paginate(25);
-        return view('/provedors/index', ['proveedors' => $proveedor]);
+        return view('/proveedors/index', ['proveedors' => $proveedors]);
     }
 
     /**
@@ -27,7 +29,7 @@ class ProveedorController extends Controller
     public function create()
     {
         $proveedors = Proveedor::all();
-        return view('/proveedors/create', ['proveedors' => $proveedors])
+        return view('/proveedors/create', ['proveedors' => $proveedors]);
     }
 
     /**
@@ -46,8 +48,9 @@ class ProveedorController extends Controller
         ]);
 
         $proveedor = new Proveedor($request->all());
+
         $proveedor->save();
-        session()->flash('success', 'Proveedor creado correctamente')
+        session()->flash('success', 'Proveedor creado correctamente');
         return redirect()->route('proveedors.index');
     }
 
@@ -59,7 +62,7 @@ class ProveedorController extends Controller
      */
     public function show(Proveedor $proveedor)
     {
-        return view('proveesors/show', ['proveedor' => $proveedor])
+        return view('proveesors/show', ['proveedors' => $proveedor]);
     }
 
     /**
@@ -70,8 +73,7 @@ class ProveedorController extends Controller
      */
     public function edit(Proveedor $proveedor)
     {
-        $proveedors = Proveedor::all();
-        return view('proveedors/edit', ['proveedors' => $proveedor]);
+        return view('proveedors/edit', ['proveedor' => $proveedor]);
     }
 
     /**
@@ -92,8 +94,8 @@ class ProveedorController extends Controller
         $user = $administrador->user;
         $user->fill($request->all());
         $user->save();
-        $medico->fill($request->all());
-        $medico->save();
+        $proveedor->fill($request->all());
+        $proveedor->save();
         session()->flash('success', 'Proveedor modificado correctamente.');
         return redirect()->route('proveedors.index');
     }

@@ -9,9 +9,9 @@ class Proveedor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre_Empresa', 'direccion', 'email', 'telefono'];
+    protected $fillable = ['nombre', 'direccion', 'email', 'telefono'];
 
     public function pedidos(){
-        return $this->hasMany(Pedido::class)
+        return $this->hasMany(Pedido::class);
     }
 }

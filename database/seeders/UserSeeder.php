@@ -20,27 +20,7 @@ class UserSeeder extends Seeder
                 'name' => "Administrador",
                 'email' => "administrador@administrador.com",
                 'password' => Hash::make('12345678'),
-            ],
-            [
-                'name' => "Médico 1",
-                'email' => "medico1@medico.com",
-                'password' => Hash::make('12345678'),
-            ],
-            [
-                'name' => "Médico 2",
-                'email' => "medico2@medico.com",
-                'password' => Hash::make('12345678'),
-            ],
-            [
-                'name' => "Paciente 1",
-                'email' => "paciente1@paciente.com",
-                'password' => Hash::make('12345678'),
-            ],
-            [
-                'name' => "Paciente 2",
-                'email' => "paciente2@paciente.com",
-                'password' => Hash::make('12345678'),
-            ],
+            ]
         ]);
     }
 }

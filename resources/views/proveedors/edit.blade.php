@@ -29,35 +29,35 @@
                         <form method="POST" action="{{ route('proveedors.store') }}">
                             @csrf
                             <div>
-                                <x-label for="name" :value="__('Nombre')" />
+                                <x-label for="nombre" :value="__('Nombre')" />
 
-                                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                                <x-input id="nombre" class="block mt-1 w-full" type="text" name="nombre" :value="$proveedor->nombre" required autofocus />
                             </div>
 
                             <!-- Email -->
                             <div class="mt-4">
                                 <x-label for="email" :value="__('Email')" />
 
-                                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$proveedor->email" required />
                             </div>
 
                             <!-- Dirección -->
                             <div>
                                 <x-label for="direccion" :value="__('Dirección')" />
 
-                                <x-input id="direccion" class="block mt-1 w-full" type="text" name="direccion" :value="old('direccion')" required autofocus />
+                                <x-input id="direccion" class="block mt-1 w-full" type="text" name="direccion" :value="$proveedor->direccion" required autofocus />
                             </div>
 
                             <!-- Teléfono -->
                             <div>
                                 <x-label for="telefono" :value="__('Teléfono')" />
 
-                                <x-input id="telefono" class="block mt-1 w-full" type="text" name="telefono" :value="old('telefono')" required autofocus />
+                                <x-input id="telefono" class="block mt-1 w-full" type="text" name="telefono" :value="$proveedor->telefono" required autofocus />
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
                                 <x-button type="button" class="bg-red-800 hover:bg-red-700">
-                                    <a href="{{\Illuminate\Support\Facades\Auth::user()->tipo_usuario_id == 3 ? route('medicos.index') :  url()->previous()}}">  <!--LE HE PUESTO LAS COMILLAS PERO NI IDEA -->
+                                    <a href="/proveedors">  <!--LE HE PUESTO LAS COMILLAS PERO NI IDEA -->
                                     {{ __('Cancelar') }}
                                     </a>
                                 </x-button>

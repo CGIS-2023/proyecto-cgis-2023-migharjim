@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Proveedors') }}
+            {{ __('Proveedores') }}
         </h2>
     </x-slot>
 
@@ -23,11 +23,13 @@
                                 {{-- <th class="py-3 px-6 text-left">Email</th> --}}
                                 <th class="py-3 px-6 text-left">Dirección</th>
                                 <th class="py-3 px-6 text-left">Teléfono</th>
+                                <th class="py-3 px-6 text-right" style="text-align:right">Acciones</th>
+
                             </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
 
-                            @foreach ($proveedors as $proveedors)
+                            @foreach ($proveedors as $proveedor)
                             <tr class="border-b border-gray-200 hover:bg-gray-100">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
@@ -58,24 +60,25 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                             </svg>
                                         </div> --}}
-                                        <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <a href="{{route('proveedors.show', $proveedor->nombre)}}">   <!--CADA VEZ QUE SALE UN ID NO SE QUE PONER -->
+                                       <!-- <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                            <a href="{{route('proveedors.show', $proveedor->id)}}">   <!--CADA VEZ QUE SALE UN ID NO SE QUE PONER 
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                 </svg>
                                             </a>
-                                        </div>
+                                        </div> -->
+                                        
 
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <a href="{{route('proveedors.edit', $proveedor->nombre)}}"> <!--CADA VEZ QUE SALE UN ID NO SE QUE PONER -->
+                                            <a href="{{route('proveedors.edit', $proveedor->id)}}"> <!--CADA VEZ QUE SALE UN ID NO SE QUE PONER -->
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                 </svg>
                                             </a>
                                         </div>
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <form id="delete-form-{{$proveedor->nombre}}" method="POST" action="{{ route('proveedors.destroy', $proveedor->nombre) }}">
+                                            <form id="delete-form-{{$proveedor->nombre}}" method="POST" action="{{ route('proveedors.destroy', $proveedor->id) }}">
                                                 @csrf
                                                 @method('delete')
                                                 <a class="cursor-pointer" onclick="getElementById('delete-form-{{$proveedor->nombre}}').submit();">
