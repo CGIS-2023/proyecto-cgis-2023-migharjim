@@ -62,7 +62,7 @@ class ProveedorController extends Controller
      */
     public function show(Proveedor $proveedor)
     {
-        return view('proveesors/show', ['proveedors' => $proveedor]);
+        return view('proveedors/show', ['proveedor' => $proveedor]);
     }
 
     /**

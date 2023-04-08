@@ -6,7 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PedidoSeeder extends Seeder
+
+class ObjetoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,19 +16,18 @@ class PedidoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pedidos')->insert([
+        DB::table('objetos')->insert([
             [
-                'fecha_emision' => "2012-01-01",
-                'fecha_recepcion' => "2032-01-01",
+                'nombre' => "Mediplus",
+                'precio' => 32.0
             ],
 
             [
-                'fecha_emision' => "2007-01-01",
-                'fecha_recepcion' => "2000-01-01"
+                'nombre' => "Jeringuilla",
+                "precio" => 3.9
+                
             ]
-
 
             ]);
     }
-    
 }
