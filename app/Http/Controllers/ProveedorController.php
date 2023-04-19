@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProveedorRequest;
 use App\Http\Requests\UpdateProveedorRequest;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
+use App\Models\Objeto;
 
 class ProveedorController extends Controller
 {
@@ -73,7 +74,8 @@ class ProveedorController extends Controller
      */
     public function edit(Proveedor $proveedor)
     {
-        return view('proveedors/edit', ['proveedor' => $proveedor]);
+        $objetos = Objeto::all();
+        return view('proveedors/edit', ['objetos'=>$objetos, 'proveedor' => $proveedor]);
     }
 
     /**
@@ -113,4 +115,25 @@ class ProveedorController extends Controller
         }
         return redirect()->route('proveedors.index');
     }
+
+    public function attach_objeto(Request $request, Proveedor $proveedor)
+    {
+        $this->validateWithBag('attach',$request, [
+            'objeto_id' => 'required|exists:objetos,id',
+            'precio' => 'required|numeric',
+        ]);
+        $proveedor->objetos()->attach($request->input("objeto_id"), [
+            'precio' => $request->precio
+        ]);
+        return redirect()->route('proveedors.edit', $proveedor->id);
+    }
+
+    public function detach_objeto(Proveedor $proveedor, Objeto $objeto)
+    {
+        $cita->objetos()->detach($objeto->id);
+        return redirect()->route('proveedors.edit', $proveedor->id);
+    }
+
+
+
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ObjetoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -34,5 +35,18 @@ require __DIR__.'/auth.php';
 // Route::middleware(['auth'])->group(function () {
     Route::resources([      
         'proveedors' => ProveedorController::class,
+    ]);
+
+    Route::post('/proveedors/{proveedor}/attach-objeto', [ProveedorController::class, 'attach_objeto'])
+        ->name('proveedors.attach_objeto');
+    Route::delete('/proveedors/{proveedor}/detach_objeto/{objeto}', [ProveedorController::class, 'detach_objeto'])
+        ->name('proveedors.detach_objeto');
+
+
+
+
+
+    Route::resources([      
+        'objetos' => ObjetoController::class,
     ]);
 // });

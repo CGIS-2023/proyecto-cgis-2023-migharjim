@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Proveedor;
 
 class ProveedorSeeder extends Seeder
 {
@@ -30,14 +31,8 @@ class ProveedorSeeder extends Seeder
                 'telefono' => "654455290"
             ]
 
-
-
-
-
-
-
-
-
             ]);
+        $proveedor1 = Proveedor::find(1);
+        $proveedor1->objetos()->attach(1, ['precio' => 132.0]);
     }
 }

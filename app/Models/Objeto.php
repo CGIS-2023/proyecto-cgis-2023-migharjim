@@ -11,5 +11,11 @@ class Objeto extends Model
 
     protected $fillable = ['nombre', 'precio'];
 
+    public function pedidos(){
+        return $this->belongsToMany(Pedido::class);
+    }
     
+    public function proveedores(){
+        return $this->belongsToMany(Proveedor::class)->withPivot('precio');;
+    }
 }

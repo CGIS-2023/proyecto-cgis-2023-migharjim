@@ -14,4 +14,8 @@ class Proveedor extends Model
     public function pedidos(){
         return $this->hasMany(Pedido::class);
     }
+
+    public function objetos(){
+        return $this->belongsToMany(Objeto::class)->withPivot('precio');
+    }
 }

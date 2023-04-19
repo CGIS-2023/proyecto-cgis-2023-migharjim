@@ -18,7 +18,7 @@ class ObjetoSeeder extends Seeder
     {
         DB::table('objetos')->insert([
             [
-                'nombre' => "Mediplus",
+                'nombre' => "suero",
                 'precio' => 32.0
             ],
 
@@ -26,7 +26,11 @@ class ObjetoSeeder extends Seeder
                 'nombre' => "Jeringuilla",
                 "precio" => 3.9
                 
-            ]
+            ],
+            [
+                'nombre' => "Gasa",
+                "precio" => 1.9
+            ],
 
             ]);
     }
