@@ -87,7 +87,7 @@
                 Objetos actuales
                 </div>
                 {{--<div class="flex items-center mt-4 ml-2">
-                    <form method="GET" action="{{ route('medicamentos.create') }}">
+                    <form method="GET" action="{{ route('objetos.create') }}">
                         <x-button type="subit" class="ml-4">
                             {{ __('Crear objeto') }}
                         </x-button>
@@ -110,11 +110,11 @@
                                         <span class="font-medium">{{$objeto->nombre}}</span>
                                     </div>
                                 </td>
-                                {{-- <td class="py-3 px-6 text-left whitespace-nowrap">
+                               <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
                                         <span class="font-medium">{{$objeto->pivot->precio}}</span>  <!--//el pivot es para acceder a la tabla-->
                                     </div>
-                                </td> --}}
+                                </td> 
 
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">

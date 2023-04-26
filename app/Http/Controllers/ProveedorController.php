@@ -130,7 +130,7 @@ class ProveedorController extends Controller
 
     public function detach_objeto(Proveedor $proveedor, Objeto $objeto)
     {
-        $cita->objetos()->detach($objeto->id);
+        $proveedor->objetos()->detach($objeto->id);
         return redirect()->route('proveedors.edit', $proveedor->id);
     }
 
