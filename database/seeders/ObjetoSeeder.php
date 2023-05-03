@@ -19,17 +19,23 @@ class ObjetoSeeder extends Seeder
         DB::table('objetos')->insert([
             [
                 'nombre' => "suero",
-                'precio' => 32.0
+                'precio' => 32.0,
+                'tipo_objeto_id' =>1
+
             ],
 
             [
                 'nombre' => "Jeringuilla",
-                "precio" => 3.9
+                "precio" => 3.9,
+                'tipo_objeto_id' =>1
+
                 
             ],
             [
                 'nombre' => "Gasa",
-                "precio" => 1.9
+                "precio" => 1.9,
+                'tipo_objeto_id' =>1
+
             ],
 
             ]);

@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateProveedorRequest;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
 use App\Models\Objeto;
+use App\Models\TipoObjeto;
+
 
 class ProveedorController extends Controller
 {
@@ -75,7 +77,8 @@ class ProveedorController extends Controller
     public function edit(Proveedor $proveedor)
     {
         $objetos = Objeto::all();
-        return view('proveedors/edit', ['objetos'=>$objetos, 'proveedor' => $proveedor]);
+        $tipoObjetos = TipoObjeto::all();
+        return view('proveedors/edit', ['objetos'=>$objetos, 'proveedor' => $proveedor, 'tipoObjetos'=>$tipoObjetos]);
     }
 
     /**
@@ -111,7 +114,7 @@ class ProveedorController extends Controller
             session()->flash('success', 'Proveedor borrado correctamente');
         }
         else{
-            session()->flash('warning', 'El Proveedor no pudo borrarse.');
+            session()->flash('warning', 'El proveedor no pudo borrarse.');
         }
         return redirect()->route('proveedors.index');
     }

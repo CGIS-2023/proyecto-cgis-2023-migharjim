@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pedidos', function (Blueprint $table) {
+        Schema::create('almacens', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('fecha_emision');
-            $table->date('fecha_recepcion')->nullable();
-            $table->softDeletes();
+            $table->float('cantidad');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('almacens');
     }
 };

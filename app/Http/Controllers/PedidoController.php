@@ -15,7 +15,10 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::orderBy('fecha_emision', 'desc')->paginate(25);
+        return view('pedidos/create', ['pedidos' => $pedidos]);
+
+        
     }
 
     /**
@@ -25,7 +28,8 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        //
+        $pedidos = Pedido::all();
+        return view('/pedidos/create', ['pedidos' => $pedidos]);
     }
 
     /**
@@ -36,7 +40,17 @@ class PedidoController extends Controller
      */
     public function store(StorePedidoRequest $request)
     {
-        //
+        $this->validate($request,[
+            'fecha_emision' => 'required|date|after:yesterday',
+            'fecha_recepcion' => 'required|date|after:yesterday',
+            ]);
+    
+            $pedidos = new Pedido($request->all());
+    
+            $pedido->save();
+            session()->flash('success', 'Pedido creado correctamente');
+            return redirect()->route('pedidos.index');
+        
     }
 
     /**
@@ -47,7 +61,8 @@ class PedidoController extends Controller
      */
     public function show(Pedido $pedido)
     {
-        //
+        return view('pedidos/show', ['pedido' => $pedido]);
+
     }
 
     /**
@@ -81,6 +96,14 @@ class PedidoController extends Controller
      */
     public function destroy(Pedido $pedido)
     {
-        //
+        if($pedido->delete()) {
+            session()->flash('success', 'Pedido borrado correctamente');
+        }
+        else{
+            session()->flash('warning', 'El pedido no pudo borrarse.');
+        }
+        return redirect()->route('pedidos.index');
     }
+
 }
+

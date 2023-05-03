@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreObjetoRequest;
 use App\Http\Requests\UpdateObjetoRequest;
 use App\Models\Objeto;
+use App\Models\TipoObjeto;
+
 use Illuminate\Http\Request;
 
 
@@ -29,7 +31,8 @@ class ObjetoController extends Controller
     public function create()
     {
         $objetos = Objeto::all();
-        return view('/objetos/create', ['objetos' => $objetos]);
+        $tipoObjetos = TipoObjeto::all();
+        return view('/objetos/create', ['objetos' => $objetos, 'tipoObjetos' =>$tipoObjetos]);
     }
 
     /**
@@ -40,9 +43,11 @@ class ObjetoController extends Controller
      */
     public function store(StoreObjetoRequest $request)
     {
+
         $this -> validate($request, [
             'nombre' => 'required|string|max:255',
-            'precio' => 'required|numeric'
+            'precio' => 'required|numeric',
+            'tipo_objeto_id' => 'required|exists:tipo_objetos,id',
         ]);
 
         $objeto = new Objeto($request->all());
@@ -71,7 +76,9 @@ class ObjetoController extends Controller
      */
     public function edit(Objeto $objeto)
     {
-        return view('objetos/edit', ['objeto' => $objeto]);
+        $tipoObjetos = TipoObjeto::all();
+
+        return view('objetos/edit', ['objeto' => $objeto, 'tipoObjetos'=>$tipoObjetos]);
 
     }
 
@@ -86,7 +93,9 @@ class ObjetoController extends Controller
     {
         $this->validate($request, [
             'nombre' => 'required|string|max:255',
-            'precio' => 'required|numeric'
+            'precio' => 'required|numeric',
+            'tipo_objeto_id' => 'required|exists:tipo_objetos,id',
+            
         ]);
         $objeto->fill($request->all());
         $objeto->save();

@@ -98,7 +98,8 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Objeto</th>
-                            <th class="py-3 px-6 text-left">Precio</th>
+                            <th class="py-3 px-6 text-left">Precio (€)</th>
+                            <th class="py-3 px-6 text-left">Tipo de objeto (€)</th>
                             <th class="py-3 px-6 text-center">Acciones</th>
                         </tr>
                         </thead>
@@ -113,6 +114,11 @@
                                <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
                                         <span class="font-medium">{{$objeto->pivot->precio}}</span>  <!--//el pivot es para acceder a la tabla-->
+                                    </div>
+                                </td> 
+                                <td class="py-3 px-6 text-left whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <span class="font-medium">{{$objeto->tipo_objeto->nombre}}</span>  <!--//el pivot es para acceder a la tabla-->
                                     </div>
                                 </td> 
 
@@ -183,6 +189,18 @@
                                      :value="old('precio')"
                                      required />
                         </div>
+
+                        <!-- Tipo Articulo -->
+                        <div class="mt-4">
+                                <x-label for="tipo_objeto_id" :value="('Tipo Objeto')" />
+
+                                <x-select id="tipo_objeto_id" name="tipo_objeto_id" required>
+                                    <option value="">{{('Elige una opción')}}</option>
+                                    @foreach ($tipoObjetos as $tipoObjeto)
+                                    <option value="{{$tipoObjeto->id}}" @if (old('tipo_objeto_id') == $tipoObjeto->id) selected @endif>{{$tipoObjeto->nombre}}</option>
+                                    @endforeach
+                                </x-select>
+                            </div>
 
 
                         <div class="flex items-center justify-end mt-4">

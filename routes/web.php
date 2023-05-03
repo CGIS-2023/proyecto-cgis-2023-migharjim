@@ -49,4 +49,8 @@ require __DIR__.'/auth.php';
     Route::resources([      
         'objetos' => ObjetoController::class,
     ]);
+
+    Route::resources([      
+        'tpoObjetos' => TipoObjetoController::class,
+    ]);
 // });

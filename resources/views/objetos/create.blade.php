@@ -36,13 +36,28 @@
                             </div>
 
 
-                            <!-- Dirección -->
+                            <!-- Precio -->
                             <div>
                                 <x-label for="precio" :value="__('Precio')" />
 
                                 <x-input id="precio" class="block mt-1 w-full" type="numeric" name="precio" :value="old('precio')" required autofocus />
                             </div>
 
+                            <!-- Tipo Articulo -->
+                        <div class="mt-4">
+                                <x-label for="tipo_objeto_id" :value="('Tipo Objeto')" />
+
+                                <x-select id="tipo_objeto_id" name="tipo_objeto_id" required>
+                                    <option value="">{{('Elige una opción')}}</option>
+                                    @foreach ($tipoObjetos as $tipoObjeto)
+                                    <option value="{{$tipoObjeto->id}}" @if (old('tipo_objeto_id') == $tipoObjeto->id) selected @endif>{{$tipoObjeto->nombre}}</option>
+                                    @endforeach
+                                </x-select>
+                            </div>
+
+
+
+                         
 
                             <div class="flex items-center justify-end mt-4">
                                 <x-button type="button" class="bg-red-800 hover:bg-red-700">

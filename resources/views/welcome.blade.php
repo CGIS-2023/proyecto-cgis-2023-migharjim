@@ -146,7 +146,7 @@
                             <div class="flex items-center">
                                 <div class="text-lg leading-7 font-semibold text-center block" style="width: 100%">
                                     <div style="padding:1em">
-                                        <a target="_blank" href="https://github.com/DamianUS/cgis-2021" class="underline text-gray-900 dark:text-white">Bienvenido al programa de gestor de almacenamiento de la instalación</a>
+                                        <a target="_blank" href="https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim.git" class="underline text-gray-900 dark:text-white">Bienvenido al programa de gestor de almacenamiento de la instalación</a>
                                     </div>
                                     <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                         Utiliza los enlaces de la esquina superior derecha para acceder.
