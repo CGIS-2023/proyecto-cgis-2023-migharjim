@@ -41,4 +41,36 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function encargado()
+    {
+        return $this->hasOne(Encargado::class);
+    }
+
+    public function gestor()
+    {
+        return $this->hasOne(Gestor::class);
+    }
+
+    public function getTipoUsuarioIdAttribute(){
+        if ($this->encargado()->exists()){
+            return 1;
+        }
+        elseif($this->gestor()->exists()){
+            return 2;
+        }
+        else{
+            return 3;
+        }
+    }
+
+    public function getTipoUsuarioAttribute(){
+        $tipos_usuario = [1 => trans('Encargado'), 2 => trans('Gestor'), 3 => trans('Administrador')];
+        return $tipos_usuario[$this->tipo_usuario_id];
+    }
 }
+
+
+
+

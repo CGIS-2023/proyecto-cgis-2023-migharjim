@@ -3,6 +3,7 @@
 use App\Http\Controllers\ObjetoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EncargadoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +52,9 @@ require __DIR__.'/auth.php';
     ]);
 
     Route::resources([      
-        'tpoObjetos' => TipoObjetoController::class,
+        'tipo_objetos' => TipoObjetoController::class,
+    ]);
+    Route::resources([      
+        'encargados' => EncargadoController::class,
     ]);
 // });

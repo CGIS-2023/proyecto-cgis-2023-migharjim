@@ -15,7 +15,8 @@ class GestorController extends Controller
      */
     public function index()
     {
-        //
+        $gestors = Gestor::paginate(25);
+        return view('/gestors/index', ['gestors' => $gestors]);
     }
 
     /**
@@ -25,7 +26,8 @@ class GestorController extends Controller
      */
     public function create()
     {
-        //
+        $gestors = Gestor::all();
+        return view('/gestors/create', ['gestors' => $gestors]);
     }
 
     /**
@@ -36,7 +38,18 @@ class GestorController extends Controller
      */
     public function store(StoreGestorRequest $request)
     {
-        //
+        $this->validate($request,[
+            'nombre' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
+        ]);
+
+
+        $gestor = new Gestor($request->all());
+
+        $gestor->save();
+        session()->flash('success', 'Gestor creado correctamente');
+        return redirect()->route('gestors.index');
+
     }
 
     /**
@@ -47,7 +60,8 @@ class GestorController extends Controller
      */
     public function show(Gestor $gestor)
     {
-        //
+        return view('gestors/show', ['gestor' => $gestor]);
+
     }
 
     /**
@@ -58,7 +72,8 @@ class GestorController extends Controller
      */
     public function edit(Gestor $gestor)
     {
-        //
+        return view('gestors/edit', ['gestor' => $gestor]);
+
     }
 
     /**
@@ -70,7 +85,14 @@ class GestorController extends Controller
      */
     public function update(UpdateGestorRequest $request, Gestor $gestor)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
+            ]);
+            $gestor->fill($request->all());
+            $gestor->save();
+            session()->flash('success', 'Gestor modificado correctamente.');
+            return redirect()->route('gestors.index');
     }
 
     /**
@@ -81,6 +103,14 @@ class GestorController extends Controller
      */
     public function destroy(Gestor $gestor)
     {
-        //
+        {
+            if($gestor->delete()) {
+                session()->flash('success', 'Gestor borrado correctamente');
+            }
+            else{
+                session()->flash('warning', 'El gestor no pudo borrarse.');
+            }
+            return redirect()->route('gestors.index');
+        }
     }
 }

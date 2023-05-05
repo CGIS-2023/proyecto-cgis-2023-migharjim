@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('gestors', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
+            $table->string('nombre');
+            $table->string('apellido');
         });
     }
 

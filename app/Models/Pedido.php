@@ -11,8 +11,8 @@ class Pedido extends Model
     protected $fillable = ['fecha_emision', 'fecha_recepcion' ];
 
     protected $casts = [
-        'fecha_emision' => 'datetime:Y-m-d H:i',
-        'fecha_recepcion' => 'datetime:Y-m-d H:i',
+        'fecha_emision' => 'datetime:Y-m-d',
+        'fecha_recepcion' => 'datetime:Y-m-d',
     ];
 
     public function objetos(){
@@ -29,7 +29,6 @@ class Pedido extends Model
 
 
     public function getDiasParaEntregaAttribute(){
-        $pedido->dias_para_entrega
         return Carbon::now()->diffInDays($this->fecha_recepcion);
     }
 }
