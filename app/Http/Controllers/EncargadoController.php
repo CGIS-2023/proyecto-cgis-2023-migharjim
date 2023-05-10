@@ -125,6 +125,25 @@ class EncargadoController extends Controller
      * @param  \App\Models\Encargado  $encargado
      * @return \Illuminate\Http\Response
      */
+
+
+     public function destroy(Encargado $encargado)
+     {
+         {
+             if($encargado->delete()) {
+                 session()->flash('success', 'Encargado borrado correctamente');
+             }
+             elseif (Encargado::has('pedidos')){
+                 session()->flash('bg-red-50 hover:bg-red-100');
+             }
+             return redirect()->route('encargados.index');
+         }
+     }
+
+
+
+
+
     public function destroy(Encargado $encargado)
     {
         {

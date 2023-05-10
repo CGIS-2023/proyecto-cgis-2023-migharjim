@@ -21,6 +21,7 @@
                             <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
                                 <th class="py-3 px-6 text-left">Nombre</th>
                                 <th class="py-3 px-6 text-left">Precio</th>
+                                <th class="py-3 px-6 text-left">Cantidad</th>
                                 <th class="py-3 px-6 text-left">Tipo de objeto</th>
                                 <th class="py-3 px-6 text-right" style="text-align:right">Acciones</th>
 
@@ -38,6 +39,11 @@
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
                                         <span class="font-medium">{{$objeto->precio}}</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <span class="font-medium">{{$objeto->cantidad}}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">

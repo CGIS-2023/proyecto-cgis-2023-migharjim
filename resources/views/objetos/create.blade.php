@@ -43,9 +43,16 @@
                                 <x-input id="precio" class="block mt-1 w-full" type="numeric" name="precio" :value="old('precio')" required autofocus />
                             </div>
 
+                            <!-- Cantidad -->
+                            <div>
+                                <x-label for="cantidad" :value="__('Cantidad')" />
+
+                                <x-input id="cantidad" class="block mt-1 w-full" type="number" name="cantidad" :value="old('cantidad')" required autofocus />
+                            </div>
+
                             <!-- Tipo Articulo -->
                         <div class="mt-4">
-                                <x-label for="tipo_objeto_id" :value="('Tipo Objeto')" />
+                                <x-label for="tipo_objeto_id" :value="old('Tipo Objeto')" />
 
                                 <x-select id="tipo_objeto_id" name="tipo_objeto_id" required>
                                     <option value="">{{('Elige una opción')}}</option>

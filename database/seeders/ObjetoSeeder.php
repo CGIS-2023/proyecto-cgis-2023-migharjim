@@ -20,21 +20,26 @@ class ObjetoSeeder extends Seeder
             [
                 'nombre' => "suero",
                 'precio' => 32.0,
-                'tipo_objeto_id' =>1
+                'tipo_objeto_id' =>1,
+                'cantidad'=> 2
 
             ],
 
             [
                 'nombre' => "Jeringuilla",
                 "precio" => 3.9,
-                'tipo_objeto_id' =>1
+                'tipo_objeto_id' =>1,
+                'cantidad'=> 1
+
 
                 
             ],
             [
                 'nombre' => "Gasa",
                 "precio" => 1.9,
-                'tipo_objeto_id' =>1
+                'tipo_objeto_id' =>1,
+                'cantidad'=> 6
+
 
             ],
 

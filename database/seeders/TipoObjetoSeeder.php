@@ -19,7 +19,7 @@ class TipoObjetoSeeder extends Seeder
         DB::table('tipo_objetos')->insert([
 
         [
-            'nombre' => "Medicamento",
+            'nombre' => "Sanitario",
         ],
 
         [

@@ -42,6 +42,13 @@
                                 <x-input id="precio" class="block mt-1 w-full" type="number" name="precio" :value="$objeto->precio" required autofocus />
                             </div>
 
+                            <!-- Cantidad -->
+                            <div>
+                                <x-label for="cantidad" :value="__('Cantidad')" />
+
+                                <x-input id="cantidad" class="block mt-1 w-full" type="number" name="cantidad" :value="$objeto->cantidad" required autofocus />
+                            </div>
+
                             <!-- Tipo Articulo -->
                             <div class="mt-4">
                                 <x-label for="tipo_objeto_id" :value="('Tipo Objeto')" />

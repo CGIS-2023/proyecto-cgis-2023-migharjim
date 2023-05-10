@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nombre');
             $table->float('precio');
+            $table->integer('cantidad');
             $table->foreignId('tipo_objeto_id')->constrained();
             
             
