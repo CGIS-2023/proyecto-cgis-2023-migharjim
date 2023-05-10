@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
+use App\Models\Pedido;
 use App\Http\Requests\StoreEncargadoRequest;
 use App\Http\Requests\UpdateEncargadoRequest;
 use App\Models\Encargado;
+use App\Models\User;
+
 
 class EncargadoController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Encargado::class, 'encargado');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +25,7 @@ class EncargadoController extends Controller
      */
     public function index()
     {
+        $pedidos = Pedido::all();
         $encargados = Encargado::paginate(25);
         return view('/encargados/index', ['encargados' => $encargados]);
     }
@@ -41,11 +52,20 @@ class EncargadoController extends Controller
         $this->validate($request,[
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:8',
+
+
         ]);
-
-
-        $encargado = new Encargado($request->all());
-
+        $user = User::create([
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        $encargado = new Encargado();
+        $user->save();
+        $encargado->user_id = $user->id;
         $encargado->save();
         session()->flash('success', 'Encargado creado correctamente');
         return redirect()->route('encargados.index');
@@ -61,7 +81,8 @@ class EncargadoController extends Controller
      */
     public function show(Encargado $encargado)
     {
-        return view('encargados/show', ['encargado' => $encargado]);
+        $user = User::all();
+        return view('encargados/show', ['encargado' => $encargado, 'user'=>$user]);
 
     }
 
@@ -89,9 +110,11 @@ class EncargadoController extends Controller
         $this->validate($request, [
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
+
             ]);
-            $encargado->fill($request->all());
-            $encargado->save();
+            $user = $encargado->user;
+            $user->fill($request->all());
+            $user->save();
             session()->flash('success', 'Encargado modificado correctamente.');
             return redirect()->route('encargados.index');
     }

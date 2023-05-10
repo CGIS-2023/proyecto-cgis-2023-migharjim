@@ -19,12 +19,16 @@ class Pedido extends Model
         return $this->hasMany(Objeto::class)->withPivot('precio');
     }
 
-    public function proveedors(){
+    public function proveedor(){
         return $this->belongsTo(Proveedor::class);
     }
 
-    public function encargados(){
+    public function encargado(){
         return $this->belongsTo(Encargado::class);
+    }
+
+    public function gestor(){
+        return $this->belongsTo(Gestor::class);
     }
 
 

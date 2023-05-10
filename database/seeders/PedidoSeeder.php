@@ -17,11 +17,17 @@ class PedidoSeeder extends Seeder
     {
         DB::table('pedidos')->insert([
             [
+                'encargado_id' => 1,
+                'proveedor_id' => 1,
+                'gestor_id' => 1,
                 'fecha_emision' => "2012-01-01",
                 'fecha_recepcion' => "2032-01-01",
             ],
 
             [
+                'encargado_id' => 2,
+                'proveedor_id' => 1,
+                'gestor_id' => 2,
                 'fecha_emision' => "2007-01-01",
                 'fecha_recepcion' => "2000-01-01"
             ]

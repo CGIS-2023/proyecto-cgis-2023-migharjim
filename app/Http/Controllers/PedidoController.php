@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePedidoRequest;
 use App\Http\Requests\UpdatePedidoRequest;
 use App\Models\Pedido;
+use App\Models\Proveedor;
+
 
 class PedidoController extends Controller
 {
@@ -15,6 +17,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
+        $proveedors = Proveedor::all();
         $pedidos = Pedido::orderBy('fecha_emision', 'desc')->paginate(25);
         return view('pedidos/create', ['pedidos' => $pedidos]);
 

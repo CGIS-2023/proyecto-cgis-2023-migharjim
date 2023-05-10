@@ -4,6 +4,7 @@ use App\Http\Controllers\ObjetoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EncargadoController;
+use App\Http\Controllers\PedidoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,5 +57,9 @@ require __DIR__.'/auth.php';
     ]);
     Route::resources([      
         'encargados' => EncargadoController::class,
+    ]);
+
+    Route::resources([      
+        'pedidos' => PedidoController::class,
     ]);
 // });

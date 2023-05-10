@@ -17,8 +17,12 @@ class EncargadoSeeder extends Seeder
     {
         DB::table('encargados')->insert([
             [
-                'nombre' => "Juan",
-                'apellido' => "Aguilar",
+                'user_id' => 2,
+
+            ],
+            [
+                'user_id' => 3,
+
             ]
         ]);
     }

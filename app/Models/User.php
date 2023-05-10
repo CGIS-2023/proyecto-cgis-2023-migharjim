@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellido',
         'email',
         'password',
     ];
@@ -54,10 +55,10 @@ class User extends Authenticatable
     }
 
     public function getTipoUsuarioIdAttribute(){
-        if ($this->encargado()->exists()){
+        if ($this->gestor()->exists()){
             return 1;
         }
-        elseif($this->gestor()->exists()){
+        elseif($this->encargado()->exists()){
             return 2;
         }
         else{
@@ -66,7 +67,7 @@ class User extends Authenticatable
     }
 
     public function getTipoUsuarioAttribute(){
-        $tipos_usuario = [1 => trans('Encargado'), 2 => trans('Gestor'), 3 => trans('Administrador')];
+        $tipos_usuario = [1 => trans('Gestor'), 2 => trans('Encargado'), 3 => trans('Administrador')];
         return $tipos_usuario[$this->tipo_usuario_id];
     }
 }

@@ -18,7 +18,8 @@ class GestorPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -30,7 +31,8 @@ class GestorPolicy
      */
     public function view(User $user, Gestor $gestor)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -41,7 +43,8 @@ class GestorPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -53,7 +56,8 @@ class GestorPolicy
      */
     public function update(User $user, Gestor $gestor)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -65,7 +69,8 @@ class GestorPolicy
      */
     public function delete(User $user, Gestor $gestor)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -77,7 +82,8 @@ class GestorPolicy
      */
     public function restore(User $user, Gestor $gestor)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -89,6 +95,7 @@ class GestorPolicy
      */
     public function forceDelete(User $user, Gestor $gestor)
     {
-        //
+        return true;
+
     }
 }

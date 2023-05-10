@@ -18,7 +18,8 @@ class EncargadoPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -30,7 +31,8 @@ class EncargadoPolicy
      */
     public function view(User $user, Encargado $encargado)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -41,7 +43,8 @@ class EncargadoPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -53,7 +56,8 @@ class EncargadoPolicy
      */
     public function update(User $user, Encargado $encargado)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -65,7 +69,8 @@ class EncargadoPolicy
      */
     public function delete(User $user, Encargado $encargado)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -77,7 +82,8 @@ class EncargadoPolicy
      */
     public function restore(User $user, Encargado $encargado)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -89,6 +95,7 @@ class EncargadoPolicy
      */
     public function forceDelete(User $user, Encargado $encargado)
     {
-        //
+        return true;
+
     }
 }

@@ -9,9 +9,13 @@ class Gestor extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'apellido'];
+    // protected $fillable = [];
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function pedidos(){
+        return $this->hasMany(Pedido::class);
     }
 }

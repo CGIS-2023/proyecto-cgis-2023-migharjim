@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('encargado_id')->constrained();
+            $table->foreignId('gestor_id')->constrained();
+            $table->foreignId('proveedor_id')->constrained();
             $table->date('fecha_emision');
             $table->date('fecha_recepcion')->nullable();
             $table->softDeletes();
