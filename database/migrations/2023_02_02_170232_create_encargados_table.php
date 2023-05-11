@@ -15,6 +15,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('encargados', function (Blueprint $table) {
+            $table->softDeletes();
             $table->id();
             $table->timestamps();
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');

@@ -20,12 +20,17 @@
                         {{ __('Encargados') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('gestors.index')" :active="request()->routeIs('gestors.index') or request()->routeIs('gestors.create') or request()->routeIs('gestors.edit') or request()->routeIs('gestors.show')">
+                        {{ __('Gestores') }}
+                    </x-nav-link>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('proveedors.index')" :active="request()->routeIs('proveedors.index') or request()->routeIs('proveedors.create') or request()->routeIs('proveedors.edit') or request()->routeIs('objetos.show')">
                         {{ __('Proveedores') }}
                     </x-nav-link>
                     </div>
+
+                    
 
                     <x-nav-link :href="route('objetos.index')" :active="request()->routeIs('objetos.index') or request()->routeIs('objetos.create') or request()->routeIs('objetos.edit') or request()->routeIs('objetos.show')">
                         {{ __('Objetos') }}
