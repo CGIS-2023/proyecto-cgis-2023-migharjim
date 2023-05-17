@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('proveedor_id')->constrained();
             $table->date('fecha_emision');
             $table->date('fecha_recepcion')->nullable();
+            $table->foreignId('estado_peticion_id')->constrained();
             $table->softDeletes();
         });
     }

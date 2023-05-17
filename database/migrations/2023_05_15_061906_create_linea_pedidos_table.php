@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('almacens', function (Blueprint $table) {
+        
+        Schema::create('linea_pedidos', function (Blueprint $table) {
             $table->id();
+            $table->integer('precio');
+            $table->integer('cantidad_pedida');
+            $table->foreignId('pedido_id')->constrained();
+            $table->foreignId('objeto')->constrained();
             $table->timestamps();
-            $table->float('cantidad');
         });
+        
     }
 
     /**
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('almacens');
+        Schema::dropIfExists('linea_pedidos');
     }
 };

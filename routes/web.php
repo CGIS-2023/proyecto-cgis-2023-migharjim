@@ -27,6 +27,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -35,10 +36,26 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::resources([      
         'proveedors' => ProveedorController::class,
+        'objetos' => ObjetoController::class,
+        'tipo_objetos' => TipoObjetoController::class,
+        'encargados' => EncargadoController::class,
+        'gestors' => GestorController::class,
+        'pedidos' => PedidoController::class,
     ]);
+
+    //Solo los administradores pueden crear, editar y borrar encargados y gestores
+
+    //Todos los usuarios pueden listar y ver el detalle de un proveedor
+    
+    //Todos los usuarios pueden listar y ver el detalle de un objeto
+    
+    //Todos los usuarios pueden listar y ver el detalle de un pedido
+    
+
+
 
     Route::post('/proveedors/{proveedor}/attach-objeto', [ProveedorController::class, 'attach_objeto'])
         ->name('proveedors.attach_objeto');
@@ -46,25 +63,14 @@ require __DIR__.'/auth.php';
         ->name('proveedors.detach_objeto');
 
 
+});
 
 
 
-    Route::resources([      
-        'objetos' => ObjetoController::class,
-    ]);
 
-    Route::resources([      
-        'tipo_objetos' => TipoObjetoController::class,
-    ]);
-    Route::resources([      
-        'encargados' => EncargadoController::class,
-    ]);
 
-    Route::resources([      
-        'gestors' => GestorController::class,
-    ]);
 
-    Route::resources([      
-        'pedidos' => PedidoController::class,
-    ]);
-// });
+
+
+    
+

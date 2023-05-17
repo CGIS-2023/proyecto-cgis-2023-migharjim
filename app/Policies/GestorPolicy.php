@@ -31,7 +31,7 @@ class GestorPolicy
      */
     public function view(User $user, Gestor $gestor)
     {
-        return true;
+        return $user->tipo_usuario_id == 3;
 
     }
 
@@ -43,7 +43,7 @@ class GestorPolicy
      */
     public function create(User $user)
     {
-        return true;
+        return $user->tipo_usuario_id == 3;
 
     }
 
@@ -56,7 +56,7 @@ class GestorPolicy
      */
     public function update(User $user, Gestor $gestor)
     {
-        return true;
+        return $user->tipo_usuario_id == 3;
 
     }
 
@@ -69,7 +69,7 @@ class GestorPolicy
      */
     public function delete(User $user, Gestor $gestor)
     {
-        return true;
+        return $user->tipo_usuario_id == 3;
 
     }
 

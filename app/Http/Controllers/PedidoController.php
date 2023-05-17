@@ -6,6 +6,11 @@ use App\Http\Requests\StorePedidoRequest;
 use App\Http\Requests\UpdatePedidoRequest;
 use App\Models\Pedido;
 use App\Models\Proveedor;
+use App\Models\Encargado;
+use App\Models\LineaPedido;
+use App\Models\EstadoPeticion;
+use App\Models\User;
+
 
 
 class PedidoController extends Controller
@@ -19,7 +24,7 @@ class PedidoController extends Controller
     {
         $proveedors = Proveedor::all();
         $pedidos = Pedido::orderBy('fecha_emision', 'desc')->paginate(25);
-        return view('pedidos/create', ['pedidos' => $pedidos]);
+        return view('pedidos/index', ['pedidos' => $pedidos]);
 
         
     }
@@ -31,8 +36,10 @@ class PedidoController extends Controller
      */
     public function create()
     {
+        $encargados = Encargado::all();
+        $estadoPeticions = EstadoPeticion::all();
         $pedidos = Pedido::all();
-        return view('/pedidos/create', ['pedidos' => $pedidos]);
+        return view('/pedidos/create', ['pedidos' => $pedidos, 'estadoPeticions' => $estadoPeticions]);
     }
 
     /**
@@ -45,11 +52,14 @@ class PedidoController extends Controller
     {
         $this->validate($request,[
             'fecha_emision' => 'required|date|after:yesterday',
-            'fecha_recepcion' => 'required|date|after:yesterday',
+            'proveedor' => 'required|string|max:255',
+            'estado_peticion_id' => 'required|exists:estado_peticions,id',
+
             ]);
     
-            $pedidos = new Pedido($request->all());
-    
+            $pedido = new Pedido($request->all());
+            $pedido->gestor_id = auth()->id();
+            $pedido->encargado_id = auth()->id();
             $pedido->save();
             session()->flash('success', 'Pedido creado correctamente');
             return redirect()->route('pedidos.index');
@@ -76,7 +86,10 @@ class PedidoController extends Controller
      */
     public function edit(Pedido $pedido)
     {
-        //
+        $lineaPedidos= LineaPedido::all();
+        $estadoPeticions = EstadoPeticion::all();
+
+        return view('pedidos/edit', ['pedido' => $pedido, 'estadoPeticions'=>$estadoPeticions, 'lineaPedidos' => $lineaPedidos]);
     }
 
     /**
@@ -88,7 +101,16 @@ class PedidoController extends Controller
      */
     public function update(UpdatePedidoRequest $request, Pedido $pedido)
     {
-        //
+        $this->validate($request, [
+            'fecha_emision' => 'required|date',
+            'fecha_recepcion' => 'required|date',
+            'estado_peticion_id' => 'required|exists:estado_peticions,id',
+            
+        ]);
+        $pedido->fill($request->all());
+        $pedido->save();
+        session()->flash('success', 'Pedido  modificado correctamente.');
+        return redirect()->route('pedidos.index');
     }
 
     /**

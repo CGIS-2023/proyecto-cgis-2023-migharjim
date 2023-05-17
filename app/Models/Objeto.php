@@ -22,4 +22,9 @@ class Objeto extends Model
     public function tipo_objeto(){
         return $this->belongsTo(TipoObjeto::class);
     }
+
+    public function almacen(){
+        return $this->belongsTo(TipoObjeto::class);
+    }
+
 }

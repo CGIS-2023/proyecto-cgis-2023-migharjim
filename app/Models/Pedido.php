@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     use HasFactory;
+
     protected $fillable = ['fecha_emision', 'fecha_recepcion' ];
+
 
     protected $casts = [
         'fecha_emision' => 'datetime:Y-m-d',
@@ -29,6 +31,10 @@ class Pedido extends Model
 
     public function gestor(){
         return $this->belongsTo(Gestor::class);
+    }
+
+    public function estado_peticion(){
+        return $this->belongsTo(EstadoPeticion::class);
     }
 
 

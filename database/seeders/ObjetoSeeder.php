@@ -21,7 +21,8 @@ class ObjetoSeeder extends Seeder
                 'nombre' => "suero",
                 'precio' => 32.0,
                 'tipo_objeto_id' =>1,
-                'cantidad'=> 2
+                'cantidad'=> 2,
+                'almacen_id'=>1,
 
             ],
 
@@ -29,7 +30,8 @@ class ObjetoSeeder extends Seeder
                 'nombre' => "Jeringuilla",
                 "precio" => 3.9,
                 'tipo_objeto_id' =>1,
-                'cantidad'=> 1
+                'cantidad'=> 1,
+                'almacen_id'=>1,
 
 
                 
@@ -38,7 +40,8 @@ class ObjetoSeeder extends Seeder
                 'nombre' => "Gasa",
                 "precio" => 1.9,
                 'tipo_objeto_id' =>1,
-                'cantidad'=> 6
+                'cantidad'=> 6,
+                'almacen_id'=>1,
 
 
             ],

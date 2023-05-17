@@ -90,7 +90,7 @@ class TipoObjetoController extends Controller
             ]);
             $tipoObjeto->fill($request->all());
             $tipoObjeto->save();
-            session()->flash('success', 'Proveedor modificado correctamente.');
+            session()->flash('success', 'Tipo de objeto modificado correctamente.');
             return redirect()->route('tipoObjetos.index');
     }
 
@@ -102,7 +102,7 @@ class TipoObjetoController extends Controller
      */
     public function destroy(TipoObjeto $tipoObjeto)
     {
-        if($proveedor->delete()) {
+        if($tipoObjeto->delete()) {
             session()->flash('success', 'Tipo de objeto borrado correctamente');
         }
         else{

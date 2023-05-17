@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Almacen extends Model
+class EstadoPeticion extends Model
 {
     use HasFactory;
+    protected $fillable = ['nombre'];
 
-
-    public function objetos(){
-        return $this->hasMany(Objeto::class);
+    public function pedidos(){
+        return $this->hasMany(Pedido::class);
     }
-
 }

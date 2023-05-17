@@ -11,6 +11,6 @@ class TipoObjeto extends Model
     protected $fillable = ['nombre'];
 
     public function objetos(){
-        return $this->hasMany(Objeto::class)->withPivot('precio');
+        return $this->hasMany(Objeto::class);
     }
 }

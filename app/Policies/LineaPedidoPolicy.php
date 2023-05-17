@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Encargado;
+use App\Models\LineaPedido;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class EncargadoPolicy
+class LineaPedidoPolicy
 {
     use HandlesAuthorization;
 
@@ -18,21 +18,19 @@ class EncargadoPolicy
      */
     public function viewAny(User $user)
     {
-        return true;
-
+        //
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Encargado  $encargado
+     * @param  \App\Models\LineaPedido  $lineaPedido
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Encargado $encargado)
+    public function view(User $user, LineaPedido $lineaPedido)
     {
-        return true;
-
+        //
     }
 
     /**
@@ -43,59 +41,54 @@ class EncargadoPolicy
      */
     public function create(User $user)
     {
-        return $user->tipo_usuario_id == 3;
-
+        //
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Encargado  $encargado
+     * @param  \App\Models\LineaPedido  $lineaPedido
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Encargado $encargado)
+    public function update(User $user, LineaPedido $lineaPedido)
     {
-        return $user->tipo_usuario_id == 3;
-
+        //
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Encargado  $encargado
+     * @param  \App\Models\LineaPedido  $lineaPedido
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Encargado $encargado)
+    public function delete(User $user, LineaPedido $lineaPedido)
     {
-        return $user->tipo_usuario_id == 3;
-
+        //
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Encargado  $encargado
+     * @param  \App\Models\LineaPedido  $lineaPedido
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Encargado $encargado)
+    public function restore(User $user, LineaPedido $lineaPedido)
     {
-        return true;
-
+        //
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Encargado  $encargado
+     * @param  \App\Models\LineaPedido  $lineaPedido
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Encargado $encargado)
+    public function forceDelete(User $user, LineaPedido $lineaPedido)
     {
-        return true;
-
+        //
     }
 }

@@ -22,16 +22,19 @@ class PedidoSeeder extends Seeder
                 'gestor_id' => 1,
                 'fecha_emision' => "2012-01-01",
                 'fecha_recepcion' => "2032-01-01",
+                'estado_peticion_id' => 1
+
             ],
 
             [
                 'encargado_id' => 2,
                 'proveedor_id' => 1,
                 'gestor_id' => 2,
-                'fecha_emision' => "2007-01-01",
-                'fecha_recepcion' => "2000-01-01"
-            ]
+                'fecha_emision' => "2011-01-01",
+                'fecha_recepcion' => "2032-01-01",
+                'estado_peticion_id' => 1
 
+            ],
 
             ]);
     }

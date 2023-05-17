@@ -28,10 +28,7 @@
                     <x-nav-link :href="route('proveedors.index')" :active="request()->routeIs('proveedors.index') or request()->routeIs('proveedors.create') or request()->routeIs('proveedors.edit') or request()->routeIs('objetos.show')">
                         {{ __('Proveedores') }}
                     </x-nav-link>
-                    </div>
-
-                    
-
+                    </div>                
                     <x-nav-link :href="route('objetos.index')" :active="request()->routeIs('objetos.index') or request()->routeIs('objetos.create') or request()->routeIs('objetos.edit') or request()->routeIs('objetos.show')">
                         {{ __('Objetos') }}
                     </x-nav-link>
