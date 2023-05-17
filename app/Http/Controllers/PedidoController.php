@@ -8,6 +8,7 @@ use App\Models\Pedido;
 use App\Models\Proveedor;
 use App\Models\Encargado;
 use App\Models\LineaPedido;
+use Illuminate\Support\Facades\Auth;
 use App\Models\EstadoPeticion;
 use App\Models\User;
 
@@ -36,10 +37,11 @@ class PedidoController extends Controller
      */
     public function create()
     {
+        $proveedors = Proveedor::all();
         $encargados = Encargado::all();
         $estadoPeticions = EstadoPeticion::all();
         $pedidos = Pedido::all();
-        return view('/pedidos/create', ['pedidos' => $pedidos, 'estadoPeticions' => $estadoPeticions]);
+        return view('/pedidos/create', ['pedidos' => $pedidos, 'estadoPeticions' => $estadoPeticions, 'proveedors' => $proveedors]);
     }
 
     /**
@@ -52,14 +54,14 @@ class PedidoController extends Controller
     {
         $this->validate($request,[
             'fecha_emision' => 'required|date|after:yesterday',
-            'proveedor' => 'required|string|max:255',
+            'proveedor_id' => 'required|exists:proveedors,id',
             'estado_peticion_id' => 'required|exists:estado_peticions,id',
 
             ]);
     
             $pedido = new Pedido($request->all());
-            $pedido->gestor_id = auth()->id();
-            $pedido->encargado_id = auth()->id();
+            $pedido->gestor_id = Auth::user()->gestor()->exists() ? Auth::user()->gestor->id : null;
+            $pedido->encargado_id = Auth::user()->encargado_id ? Auth::user()->encargado->id : null;
             $pedido->save();
             session()->flash('success', 'Pedido creado correctamente');
             return redirect()->route('pedidos.index');

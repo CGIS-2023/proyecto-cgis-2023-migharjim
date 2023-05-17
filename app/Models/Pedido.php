@@ -9,7 +9,7 @@ class Pedido extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fecha_emision', 'fecha_recepcion' ];
+    protected $fillable = ['fecha_emision', 'fecha_recepcion', 'proveedor_id', 'estado_peticion_id'];
 
 
     protected $casts = [

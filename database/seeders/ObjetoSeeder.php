@@ -18,7 +18,7 @@ class ObjetoSeeder extends Seeder
     {
         DB::table('objetos')->insert([
             [
-                'nombre' => "suero",
+                'nombre' => "Suero",
                 'precio' => 32.0,
                 'tipo_objeto_id' =>1,
                 'cantidad'=> 2,
@@ -45,6 +45,37 @@ class ObjetoSeeder extends Seeder
 
 
             ],
+
+            [
+                'nombre' => "Caja de tornillos",
+                "precio" => 1.9,
+                'tipo_objeto_id' =>3,
+                'cantidad'=> 2,
+                'almacen_id'=>1,
+
+
+            ],
+
+            [
+                'nombre' => "Destornillador",
+                "precio" => 1.9,
+                'tipo_objeto_id' =>3,
+                'cantidad'=> 1,
+                'almacen_id'=>1,
+
+
+            ],
+
+            [
+                'nombre' => "Botella de lejía",
+                "precio" => 1.9,
+                'tipo_objeto_id' =>2,
+                'cantidad'=> 8,
+                'almacen_id'=>1,
+
+
+            ],
+
 
             ]);
     }

@@ -19,7 +19,19 @@ class ObjetoController extends Controller
      */
     public function index()
     {
-        $objetos = Objeto::paginate(25);
+
+        $objetos = Objeto::query()->when(request('search'), function($query) {
+            return $query->where('nombre', 'like', '%' . request('search') . '%')
+                ->orWhere('tipo_objeto_id','like', '%' . request('search') . '%')
+                ->orWhereHas('tipo_objeto', function ($r) {
+                    $r->where('nombre', 'like', '%' .  request('search') . '%');
+                });
+
+        })
+        ->paginate(25);
+
+
+
         return view('/objetos/index', ['objetos' => $objetos]);
     }
 

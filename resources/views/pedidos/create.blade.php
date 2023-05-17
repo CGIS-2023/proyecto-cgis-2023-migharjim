@@ -38,9 +38,14 @@
 
                             <!-- Proveedor -->
                             <div>
-                                <x-label for="proveedor" :value="__('Proveedor')" />
+                            <x-label for="estado_peticion_id" :value="__('Proveedor')" />
 
-                                <x-input id="proveedor" class="block mt-1 w-full" type="text" name="proveedor" :value="old('proveedor')" required autofocus />
+                                <x-select id="proveedor_id" name="proveedor_id" required>
+                                    <option value="">{{('Elige una opción')}}</option>
+                                    @foreach ($proveedors as $proveedor)
+                                    <option value="{{$proveedor->id}}" @if (old('proveedor_id') == $proveedor->id) selected @endif>{{$proveedor->nombre}}</option>
+                                    @endforeach
+                                </x-select>
                             </div>
 
                             <!-- Tipo Articulo -->
@@ -50,7 +55,7 @@
                                 <x-select id="estado_peticion_id" name="estado_peticion_id" required>
                                     <option value="">{{('Elige una opción')}}</option>
                                     @foreach ($estadoPeticions as $estadoPeticion)
-                                    <option value="{{$estadoPeticion->id}}" @if (old('estado_peticion_id') == $estadoPeticion->id) selected @endif>{{$estadoPeticion->nombre}}</option>
+                                    <option value="{{$estadoPeticion->id}}" @if ($estadoPeticion->id ==1) selected @endif>{{$estadoPeticion->nombre}}</option>
                                     @endforeach
                                 </x-select>
                             </div>

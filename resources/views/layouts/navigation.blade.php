@@ -25,6 +25,12 @@
                     </x-nav-link>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos.index') or request()->routeIs('pedidos.create') or request()->routeIs('pedidos.edit') or request()->routeIs('pedidos.show')">
+                        {{ __('Pedidos') }}
+                    </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('proveedors.index')" :active="request()->routeIs('proveedors.index') or request()->routeIs('proveedors.create') or request()->routeIs('proveedors.edit') or request()->routeIs('objetos.show')">
                         {{ __('Proveedores') }}
                     </x-nav-link>
