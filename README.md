@@ -24,13 +24,13 @@ Gestión de productos de proveedores: comparar el precio de productos entre vari
 Gestión de los pedidos: buscar entre los distintos pedidos realizados.<br />
 
 
-### Usuarios del sistema<br />
+### Usuarios del sistema <br />
 
-Administrador: encargado del buen funcionamiento de la aplicación. Tendrá acceso a todas las entidades de la aplicación y en caso de necesidad podrá añadir, eliminar o modificar cualquiera de ellas.<br />
+**Administrador:** encargado del buen funcionamiento de la aplicación. Tendrá acceso a todas las entidades de la aplicación y en caso de necesidad podrá añadir, eliminar o modificar cualquiera de ellas.<br />
 
-Encargado de compras: se encargará de validar las peticiones o eliminarlas.<br />
+**Encargado de compras:** se encargará de validar las peticiones o eliminarlas.<br />
 
-Gestor: su objetivo es realizar un pedido con los productos necesarios.<br />
+**Gestor:** su objetivo es realizar un pedido con los productos necesarios.<br />
 
 
 ### Requisitos de información:<br />
