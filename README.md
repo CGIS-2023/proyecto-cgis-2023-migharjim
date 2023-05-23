@@ -8,9 +8,11 @@ Para ello, varias personas tendrán acceso a esta aplicación. Por un lado, enco
 Por último tenemos al administrador de la aplicación web que se encargará de su mantenimiento y tendrá acceso a todas las instancias.<br />
 
 ### Encontramos tres tipos de objetos: <br />
-Productos de limpieza (guantes, jabón, lejía…).<br />
-Herramientas para el mantenimiento de instalaciones y máquinas (bombillas, cableado, tornillos…).<br />
-Sanitarios, que serían medicamentos e instrumentación (sueros, antibióticos, jeringuillas, gasas, vendajes…).<br />
+**Productos de limpieza** (guantes, jabón, lejía…). <br />
+
+**Herramientas para el mantenimiento** de instalaciones y máquinas (bombillas, cableado, tornillos…). <br />
+
+**Sanitarios**, que serían medicamentos e instrumentación (sueros, antibióticos, jeringuillas, gasas, vendajes…).  <br />
 
 Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
