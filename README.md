@@ -61,3 +61,10 @@ Gestor: su objetivo es realizar un pedido con los productos necesarios.<br />
 **RN-03:** no se puede realizar un pedido con una fecha anterior a la actual. <br />
 **RN-04:** No se podrá crear o eliminar un proveedor si no eres un administrador.<br />
 **RN-05:** No se podrá eliminar o editar un pedido si no eres un encargado.
+
+## DIAGRAMA
+
+![Diagrama informerequisitos drawio](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/49bf8744-231c-40eb-bc01-49019ee364e6)
+
+
+
