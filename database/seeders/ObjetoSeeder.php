@@ -58,7 +58,7 @@ class ObjetoSeeder extends Seeder
 
             [
                 'nombre' => "Destornillador",
-                "precio" => 1.9,
+                "precio" => 5,
                 'tipo_objeto_id' =>3,
                 'cantidad'=> 1,
                 'almacen_id'=>1,
@@ -71,6 +71,46 @@ class ObjetoSeeder extends Seeder
                 "precio" => 1.9,
                 'tipo_objeto_id' =>2,
                 'cantidad'=> 8,
+                'almacen_id'=>1,
+
+
+            ],
+
+            [
+                'nombre' => "Fregona",
+                "precio" => 3,
+                'tipo_objeto_id' =>2,
+                'cantidad'=> 9,
+                'almacen_id'=>1,
+
+
+            ],
+
+            [
+                'nombre' => "Cepillo",
+                "precio" => 3,
+                'tipo_objeto_id' =>2,
+                'cantidad'=> 5,
+                'almacen_id'=>1,
+
+
+            ],
+
+            [
+                'nombre' => "Guantes",
+                "precio" => 1.9,
+                'tipo_objeto_id' =>2,
+                'cantidad'=> 18,
+                'almacen_id'=>1,
+
+
+            ],
+
+            [
+                'nombre' => "LLave inglesa",
+                "precio" => 15,
+                'tipo_objeto_id' =>3,
+                'cantidad'=> 10,
                 'almacen_id'=>1,
 
 
