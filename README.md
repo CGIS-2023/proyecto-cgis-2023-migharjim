@@ -3,6 +3,7 @@
 
 Esta es una descripción por defecto de **ProyectoPrueba**. Aquí deberá aparecer la descripción que también aparezca en el documento
 
+![Diagrama cgis drawio (3)](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/05cceea1-0697-497a-b4b7-e23e07fcf35b)
 
 ## Instrucciones para su uso
 1. Clone desde Visual Studio Code (o cualquier IDE de su preferencia) este repositorio.
