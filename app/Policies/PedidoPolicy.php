@@ -18,7 +18,7 @@ class PedidoPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class PedidoPolicy
      */
     public function view(User $user, Pedido $pedido)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,8 @@ class PedidoPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->tipo_usuario_id == 1;
+
     }
 
     /**
@@ -53,7 +54,8 @@ class PedidoPolicy
      */
     public function update(User $user, Pedido $pedido)
     {
-        //
+        return $user->tipo_usuario_id == 2;
+
     }
 
     /**
@@ -65,7 +67,7 @@ class PedidoPolicy
      */
     public function delete(User $user, Pedido $pedido)
     {
-        //
+        return $user->tipo_usuario_id == 2;
     }
 
     /**
@@ -77,7 +79,7 @@ class PedidoPolicy
      */
     public function restore(User $user, Pedido $pedido)
     {
-        //
+        return true;
     }
 
     /**

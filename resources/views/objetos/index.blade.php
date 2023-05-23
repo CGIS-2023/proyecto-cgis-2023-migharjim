@@ -8,16 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!--BUSCADOR-->
-                <form method="GET">
-                <div class="form-row">
-                    <div class="col-sm-4">
-                        <input type="text"  name="search" class="form-control" placeholder="Buscar">
-                    </div>
-                    <div class="rol-auto">
-                        <input type="submit" class="btn btn-primary" value="Buscar">
-                    </div>
-                </div>    
-                </form>
+            
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex items-center mt-4 ml-2">
@@ -27,6 +18,20 @@
                         </x-button>
                     </form>
                 </div>
+
+                <form method="GET">
+                <div style="margin: 24px 25px" >
+                    <div class="col-sm-4">
+                        <input type="text"  name="search" class="form-control" placeholder="Buscar">
+                        <x-button class="ml-4">
+                                {{ __('Buscar') }}
+                        </x-button>
+                    </div>  
+                </div>    
+                </form>
+
+
+
 
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="min-w-max w-full table-auto">

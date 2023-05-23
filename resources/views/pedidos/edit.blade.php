@@ -80,7 +80,7 @@
                                 </td> 
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$LineaPedido->objeto->tipo_objeto->nombre}}</span>  <!--//el pivot es para acceder a la tabla-->
+                                        <span class="font-medium">{{$lineaPedido->objeto->tipo_objeto->nombre}}</span>  <!--//el pivot es para acceder a la tabla-->
                                     </div>
                                 </td> 
 

@@ -8,6 +8,16 @@ use App\Models\Gestor;
 
 class GestorController extends Controller
 {
+
+
+
+    public function __construct()
+    {
+        $this->authorizeResource(Gestor::class, 'gestor');
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *

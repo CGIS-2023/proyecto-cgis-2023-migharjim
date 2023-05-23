@@ -13,6 +13,12 @@ use App\Models\TipoObjeto;
 
 class ProveedorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Proveedor::class, 'proveedor');
+    }
+
     /**
      * Display a listing of the resource.
      *

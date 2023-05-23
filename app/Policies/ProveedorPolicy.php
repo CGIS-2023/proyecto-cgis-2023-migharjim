@@ -30,7 +30,8 @@ class ProveedorPolicy
      */
     public function view(User $user, Proveedor $proveedor)
     {
-        //
+        return true;
+
     }
 
     /**
@@ -65,7 +66,8 @@ class ProveedorPolicy
      */
     public function delete(User $user, Proveedor $proveedor)
     {
-        //
+        return $user->tipo_usuario_id == 3;
+ 
     }
 
     /**
@@ -77,7 +79,8 @@ class ProveedorPolicy
      */
     public function restore(User $user, Proveedor $proveedor)
     {
-        //
+        return $user->tipo_usuario_id == 3;
+
     }
 
     /**

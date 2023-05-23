@@ -16,6 +16,11 @@ use App\Models\User;
 
 class PedidoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Pedido::class, 'pedido');
+    }
     /**
      * Display a listing of the resource.
      *
