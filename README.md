@@ -17,11 +17,11 @@ Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
 ### Objetivos de la aplicación<br />
 
-Gestión de las peticiones: permitir realizar peticiones sobre productos del almacén.<br />
+**Gestión de las peticiones:** permitir realizar peticiones sobre productos del almacén.<br />
 
-Gestión de productos de proveedores: comparar el precio de productos entre varios proveedores.<br />
+**Gestión de productos de proveedores:** comparar el precio de productos entre varios proveedores.<br />
 
-Gestión de los pedidos: buscar entre los distintos pedidos realizados.<br />
+**Gestión de los pedidos:** buscar entre los distintos pedidos realizados.<br />
 
 
 ### Usuarios del sistema <br />
