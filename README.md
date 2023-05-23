@@ -64,7 +64,7 @@ Gestor: su objetivo es realizar un pedido con los productos necesarios.<br />
 
 ## DIAGRAMA
 
-![Diagrama informerequisitos drawio](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/49bf8744-231c-40eb-bc01-49019ee364e6)
+![Diagrama2 cgis drawio](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/b0e45aa6-153d-4b75-85fc-278f6b244852)
 
 
 
