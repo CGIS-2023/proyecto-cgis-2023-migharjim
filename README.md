@@ -1,4 +1,4 @@
-**DOMINIO**
+**DOMINIO**/n
 Una de las principales metas de toda organización consiste en la reducción del coste generado a la hora de reabastecerse de nuevos suministros. En el que caso de los hospitales, esta es una acción muy importante, puesto que se necesita que estos costes no superen un determinado presupuesto y, además, se debe asegurar que estos artículos cumplan con una serie de garantías que afiancen la seguridad en pacientes y la eficacia a la hora de trabajar con ellos.
 
 El objetivo de este trabajo es implementar una aplicación web que apoyará a clínicas y hospitales a la hora de tener que realizar dichas compras, para agilizar así la gestión, reduciendo el tiempo necesario en la búsqueda y creación de pedidos.
