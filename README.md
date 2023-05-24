@@ -25,11 +25,13 @@ Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
 **Objetivo 3: Gestión de los pedidos:** poder acceder a los distintos pedidos realizados.<br />
 
-**Objetivo 3: Gestión de los objetos:** buscar entre los distintos objetos disponibles.<br />
+**Objetivo 4: Gestión de los objetos:** buscar entre los distintos objetos disponibles.<br />
 
-**Objetivo 3: Gestión de los proveedores:** buscar entre los distintos pedidos realizados.<br />
+**Objetivo 5: Gestión de los proveedores:** poder almacenar información de los proveedores y ver el precio que ofertan de sus productos.<br />
 
-**Objetivo 3: Gestión de los usuarios:** buscar entre los distintos pedidos realizados.<br />
+**Objetivo 6: Gestión de los usuarios:** poder modificar, crear o eliminar la información de los distintos usuarios registrados.<br />
+
+**Objetivo 7: Gestión de nuevos usuarios:** permitir crear nuevos usuarios.<br />
 
 ### Usuarios del sistema <br />
 
