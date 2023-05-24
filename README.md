@@ -44,12 +44,19 @@ Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
 ### Requisitos de información:<br />
 **RI-01. Gestores:** El sistema deberá almacenar información sobre los gestores del sistema, en concreto: nombre, apellido, email, contraseña.<br />
+
 **RI-02. Encargados:** El sistema deberá almacenar información sobre los encargados del sistema, en concreto: nombre, apellido, email, contraseña.<br />
+
 **RI-03. Administradores:** El sistema deberá almacenar información sobre los administradores del sistema, en concreto: nombre, apellido, email, contraseña.<br />
+
 **RI-04. Pedidos:** El sistema deberá almacenar información sobre los pedidos, en concreto: fecha de emisión del pedido, número de pedido, quién la realiza, proveedor al que se dirije y el estado en el que se encuentra: pendiente, aceptado o rechazado.<br />
+
 **RI-05. Objetos:**  El sistema deberá almacenar información sobre los objetos del pedido, en concreto: precio, nombre y cantidad. Podemos clasificar los objetos en 3 grupos: sanitario, limpieza y mantenimiento. Cada uno de ellos se almacena en una sección distinta. No pueden pertenecer al mismo grupo simultáneamente.<br />
-**RI-06. Proveedores:**  El sistema deberá almacenar información sobre los proveedores, en concreto: nombre de la empresa, dirección, email, teléfono.<br />
+
+**RI-06. Proveedores:**  El sistema deberá almacenar información sobre los proveedores, en concreto: nombre de la empresa, dirección, email, teléfono. <br />
+
 **RI-07. Almacén:**  El sistema deberá almacenar información sobre el almacén, en concreto: nombre y dirección.<br />
+
 **RI-08. Línea de pedidos:** El sistema deberá almacenar información sobre las líneas de pedido, en concreto: identificador de la línea de pedido y el precio total de compra.
 
 
