@@ -126,7 +126,7 @@ Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
 ## DIAGRAMA
 
-![Diagrama cgis drawio (5)](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/156fdd04-1ae3-4d36-8a2d-ab2258d1ade1)
+![Diagrama cgis drawio (6)](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/41417883-2cb8-47b7-8129-8cbe16f0c3cf)
 
 
 
