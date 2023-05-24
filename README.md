@@ -19,12 +19,17 @@ Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
 ### Objetivos de la aplicación<br />
 
-**Gestión de las peticiones:** permitir realizar peticiones sobre productos del almacén.<br />
+**Objetivo 1: Gestión de las peticiones:** permitir realizar peticiones sobre productos del almacén.<br />
 
-**Gestión de productos de proveedores:** comparar el precio de productos entre varios proveedores.<br />
+**Objetivo 2: Gestión de productos de proveedores:** comparar el precio de productos entre varios proveedores.<br />
 
-**Gestión de los pedidos:** buscar entre los distintos pedidos realizados.<br />
+**Objetivo 3: Gestión de los pedidos:** poder acceder a los distintos pedidos realizados.<br />
 
+**Objetivo 3: Gestión de los objetos:** buscar entre los distintos objetos disponibles.<br />
+
+**Objetivo 3: Gestión de los proveedores:** buscar entre los distintos pedidos realizados.<br />
+
+**Objetivo 3: Gestión de los usuarios:** buscar entre los distintos pedidos realizados.<br />
 
 ### Usuarios del sistema <br />
 
@@ -36,21 +41,67 @@ Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
 
 ### Requisitos de información:<br />
-**RI-01. Usuarios:** El sistema deberá almacenar información sobre los usuarios del sistema, en concreto: nombre, apellido, email, contraseña.<br />
-**RI-02. Pedidos:** El sistema deberá almacenar información sobre los pedidos, en concreto: fecha de emisión del pedido, número de pedido, quién la realiza, proveedor al que se dirije y el estado en el que se encuentra: pendiente, aceptado o rechazado.<br />
-**RI-03. Objetos:**  El sistema deberá almacenar información sobre los objetos del pedido, en concreto: precio, nombre y cantidad. Podemos clasificar los objetos en 3 grupos: sanitario, limpieza y mantenimiento. Cada uno de ellos se almacena en una sección distinta. No pueden pertenecer al mismo grupo simultáneamente.<br />
-**RI-04. Proveedores:**  El sistema deberá almacenar información sobre los proveedores, en concreto: nombre de la empresa, dirección, email, teléfono.<br />
-**RI-05. Almacén:**  El sistema deberá almacenar información sobre el almacén, en concreto: nombre y dirección.<br />
-**RI-06. Línea de pedidos:** El sistema deberá almacenar información sobre las líneas de pedido, en concreto: identificador de la línea de pedido y el precio total de compra.
+**RI-01. Gestores:** El sistema deberá almacenar información sobre los gestores del sistema, en concreto: nombre, apellido, email, contraseña.<br />
+**RI-02. Encargados:** El sistema deberá almacenar información sobre los encargados del sistema, en concreto: nombre, apellido, email, contraseña.<br />
+**RI-03. Administradores:** El sistema deberá almacenar información sobre los administradores del sistema, en concreto: nombre, apellido, email, contraseña.<br />
+**RI-04. Pedidos:** El sistema deberá almacenar información sobre los pedidos, en concreto: fecha de emisión del pedido, número de pedido, quién la realiza, proveedor al que se dirije y el estado en el que se encuentra: pendiente, aceptado o rechazado.<br />
+**RI-05. Objetos:**  El sistema deberá almacenar información sobre los objetos del pedido, en concreto: precio, nombre y cantidad. Podemos clasificar los objetos en 3 grupos: sanitario, limpieza y mantenimiento. Cada uno de ellos se almacena en una sección distinta. No pueden pertenecer al mismo grupo simultáneamente.<br />
+**RI-06. Proveedores:**  El sistema deberá almacenar información sobre los proveedores, en concreto: nombre de la empresa, dirección, email, teléfono.<br />
+**RI-07. Almacén:**  El sistema deberá almacenar información sobre el almacén, en concreto: nombre y dirección.<br />
+**RI-08. Línea de pedidos:** El sistema deberá almacenar información sobre las líneas de pedido, en concreto: identificador de la línea de pedido y el precio total de compra.
 
 
 ### Requisitos funcionales: <br />
-**RF-01.** Stock de almacén: Como encargado, quiero poder ver el stock de cualquier producto del almacén.<br />
-**RF-02.** Detalles del pedido: Como encargado, quiero ver quién ha enviado la petición para en caso de rechazarla comunicárselo <br />
-**RF-03.** Detalles del pedido: Como encargado, quiero ver el precio de los productos ofertados por distintos proveedores.<br />
-**RF-04.** Detalles del pedido: Como encargado, quiero poder modificar un pedido.<br />
-**RF-05.** Detalles del petición: Como encargado, quiero poder eliminar un pedido.<br />
-**RF-06.** Organización de usuarios: Como administrador, quiero poder eliminar, editar, crear y mostrar todos los usuarios de la aplicación.<br />
+
+#### CRUD Gestores
+**RI-01. Borrado** El sistema deberá permitir al administrador eliminar la información de los gestores.<br />
+**RI-02. Creación** El sistema deberá permitir crear al administrador la información de los gestores.<br />
+**RI-03. Editar** El sistema deberá permitir editar al administrador la información de los gestores.<br />
+**RI-04. Ver detalle** El sistema deberá permitir mostrar al administrador la información de los gestores.<br />
+
+#### CRUD Encargados
+**RI-05. Borrado** El sistema deberá permitir al administrador eliminar la información de los encargados.<br />
+**RI-06. Creación** El sistema deberá permitir crear al administrador la información de los encargados.<br />
+**RI-07. Editar** El sistema deberá permitir editar al administrador la información de los encargados.<br />
+**RI-08. Ver detalle** El sistema deberá permitir mostrar al administrador la información de los encargados.<br />
+
+#### CRUD Administradores
+**RI-09. Borrado** El sistema deberá permitir al administrador eliminar la información de los administradores.<br />
+**RI-10. Creación** El sistema deberá permitir crear al administrador la información de los administradores.<br />
+**RI-11. Editar** El sistema deberá permitir editar al administrador la información de los administradores.<br />
+**RI-12. Ver detalle** El sistema deberá permitir mostrar al administrador la información de los administradores.<br />
+
+#### CRUD Proveedores
+**RI-13. Borrado** El sistema deberá permitir al administrador eliminar la información de los proveedores.<br />
+**RI-14. Creación** El sistema deberá permitir crear al administrador la información de los proveedores.<br />
+**RI-15. Editar** El sistema deberá permitir editar al administrador la información de los proveedores.<br />
+**RI-16. Ver detalle** El sistema deberá permitir mostrar al administrador la información de los proveedores.<br />
+
+#### CRUD Objetos
+**RI-17. Borrado** El sistema deberá permitir eliminar la información de los objetos.<br />
+**RI-18. Creación** El sistema deberá permitir crear la información de los objetos.<br />
+**RI-19. Editar** El sistema deberá permitir editar la información de los objetos.<br />
+**RI-20. Ver detalle** El sistema deberá permitir mostrar la información de los objetos.<br />
+
+#### CRUD Pedidos
+**RI-21. Borrado** El sistema deberá permitir al encargado eliminar la información de los pedidos.<br />
+**RI-22. Creación** El sistema deberá permitir crear al gestor la información de los pedidos.<br />
+**RI-23. Editar** El sistema deberá permitir editar al encargado la información de los pedidos.<br />
+**RI-24. Ver detalle** El sistema deberá permitir mostrar la información de los pedidos.<br />
+
+#### Encargado
+**RF-25.** Stock de almacén: Como encargado, quiero poder ver el stock de cualquier producto del almacén.<br />
+**RF-26.** Detalles del pedido: Como encargado, quiero ver quién ha enviado la petición para en caso de rechazarla comunicárselo <br />
+**RF-27.** Detalles del pedido: Como encargado, quiero poder modificar un pedido.<br />
+**RF-28.** Detalles del petición: Como encargado, quiero poder eliminar un pedido.<br />
+
+#### Administrador
+**RF-29.** Organización de usuarios: Como administrador, quiero poder eliminar, editar, crear y mostrar todos los usuarios de la aplicación.<br />
+**RF-30.** Organización de usuarios: Como administrador, quiero poder eliminar, editar, crear y mostrar todos los proveedores de la aplicación.<br />
+
+#### Gestor
+**RF-31.** Detalles del pedido: Como gestor, quiero ver el precio de los productos ofertados por distintos proveedores.<br />
+
 
 ### Requisitos no funcionales:<br />
 **RNF-01:** Seguridad de las contraseñas de los usuarios.<br />
@@ -66,7 +117,7 @@ Dichos objetos se encontrarán en alojados en un mismo almacén.<br />
 
 ## DIAGRAMA
 
-![Diagrama cgis drawio (4)](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/cd0e7f25-1cc1-4677-a429-bc2ca603d657)
+![Diagrama cgis drawio (5)](https://github.com/CGIS-2023/proyecto-cgis-2023-migharjim/assets/126070979/156fdd04-1ae3-4d36-8a2d-ab2258d1ade1)
 
 
 
